@@ -15,7 +15,10 @@ convert2seed <- function(x) {
 load('./data_for_analysis.RData')
 
 
-# Use a simple 2-fold for this example. Randomly allocate individuals to a fold while keeping the clustered nature of the data intact. This avoids the spurious attentuation of the mean squared error (MSE) that would likely occur by training and testing the model on non-independent sets of data. Repeat the 2-fold random allocation procedure three times to get three separate sets of random folds. Perform the CV procedure once for each of the three sets,  then average the MSE across folds.
+# Use a simple 2-fold for this example. Randomly allocate individuals to a fold while keeping the clustered nature of the data intact. ...
+# This avoids the spurious attentuation of the mean squared error (MSE) that would likely occur by training and testing the model on ...
+# non-independent sets of data. Repeat the 2-fold random allocation procedure three times to get three separate sets of random folds. ...
+# Perform the CV procedure once for each of the three sets,  then average the MSE across folds.
 
 # Construct folds for CV
 nfolds <- 2
@@ -71,7 +74,8 @@ rm('es_nogo');gc();
 es_n_cv.2folds3sets = sapply(paste("cv_",1:3,sep=""), function(x) data.frame())
 
 
-# Fit Harshman's Parafac2 model to the 4-way array from the training fold, then fit a model to the test fold applying the training model weights, and calculate the mean-square error (MSE) for the test data relative to the fit. Do this process for factor size 1:10 to use the CV-MSE as a method of choosing the appropriate model
+# Fit Harshman's Parafac2 model to the 4-way array from the training fold, then fit a model to the test fold applying the training model weights, ...
+# and calculate the mean-square error (MSE) for the test data relative to the fit. Do this process for factor size 1:10 to use the CV-MSE as a method of choosing the appropriate model
 for (aa in 1:length(foldid)) {
   es_n_cv.2folds3sets[[aa]] <- cv.4way_parallel(Xs, 1:10, NA, model="parafac2", nfolds=2, foldid=foldid[[aa]], nstarts = 10, constraints = c("uncons","unimod","uncons","nonneg"), numclust = 10)
   gc();
