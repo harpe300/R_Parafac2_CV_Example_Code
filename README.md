@@ -2,7 +2,7 @@
 
 A set of R code scripts that I wrote for an analytic research project currently in development. 
 
-This code implements a novel dimensionality reduction method (**Par**allel **Fac**tor Analysis - 2, or Parafac2) applied to a four-dimensional array of multi-nested data (~2 million entries). Parafac2 can explain variation across all four dimensions (modes) of the data *simultaneously* in a single model. Unlike bimodal methods such as PCA and ICA, this method requires much fewer free parameters to model the same data, allows us to use all data without unfolding the data and thus violating the multiway structure of the data, and provides a unique solution (e.g., no rotational indeterminacy like in PCA/ICA) that aids in interpreting the factors.
+This code implements a novel dimensionality reduction method (<ins>**Par**</ins>allel <ins>**Fac**</ins>tor Analysis - 2, or Parafac2) applied to a four-dimensional array of multi-nested data (~2 million entries). Parafac2 can explain variation across all four dimensions (modes) of the data *simultaneously* in a single model. Unlike bimodal methods such as PCA and ICA, this method requires much fewer free parameters to model the same data, allows us to use all data without unfolding the data and thus violating the multiway structure of the data, and provides a unique solution (e.g., no rotational indeterminacy like in PCA/ICA) that aids in interpreting the factors.
 
 The optimal model is chosen using cross-validation of the change in mean square error, and is then validated via a split-half analysis. The resulting model parsimoniously explains over 60% of the variance across all four dimensions *simultaneously* with only five factors.
 
