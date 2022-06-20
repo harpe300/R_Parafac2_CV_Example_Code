@@ -47,7 +47,8 @@ rm(esmf_go)
 gc()
 
 ## Make Four Random Splits ##
-# This randomly allocates individuals to a fold while keeping the clustered nature of the data intact, thus ensuring full independence across splits. This avoids spuriously inflating the congruence coefficients by calculating congruence between two models from non-independent splits of data.
+# This randomly allocates individuals to a fold while keeping the clustered nature of the data intact, thus ensuring full independence across splits. 
+# This avoids spuriously inflating the congruence coefficients by calculating congruence between two models from non-independent splits of data.
 
 nfolds <- 4
 
